@@ -1,0 +1,313 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+
+}
+
+.header {
+    background: linear-gradient(90deg, #721855 0%, #7e0d49 100%);
+    text-align: center;
+}
+
+.logo-section {
+    padding: 3px;
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.logo-section img {
+    height: 120px;
+}
+
+.logo-subtitle {
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+}
+
+.logo-subtitle::before,
+.logo-subtitle::after {
+    content: '♥';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logo-subtitle::before {
+    left: -30px;
+}
+
+.logo-subtitle::after {
+    right: -30px;
+}
+
+.nav {
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    width: auto;
+    height: auto;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 18px 22px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(119, 61, 131, 0.808);
+    border-bottom-color: #ff00bf;
+}
+
+/* Contenido principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: #721855;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Grid de personajes - RESPONSIVE */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta de personaje */
+.character-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.character-card:hover {
+    box-shadow: 0 4px 16px rgba(114, 24, 85, 0.3);
+    transform: translateY(-5px);
+}
+
+.character-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #721855, #7e0d49);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character-icon {
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.character-info {
+    padding: 20px;
+}
+
+.character-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #721855;
+    margin-bottom: 8px;
+}
+
+.character-role {
+    font-size: 13px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.character-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.character-stats {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.stat {
+    background: #f5f5f5;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #721855;
+    font-weight: 600;
+}
+
+.view-more {
+    color: #721855;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.view-more:hover {
+    color: #7e0d49;
+}
+
+.menu-toggle {
+    display: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Overlay oscuro para el menú lateral */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* RESPONSIVE MÓVILES (menos de 768px) */
+@media (max-width: 768px) {
+    /* Botón hamburguesa posicionado a la izquierda */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+        background: rgba(114, 24, 85, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-toggle:hover {
+        background: rgba(126, 13, 73, 1);
+    }
+
+    /* Menú lateral deslizante desde la izquierda */
+    .nav {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, #721855 0%, #7e0d49 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding-top: 70px;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    /* Menú activo (visible) */
+    .nav.active {
+        left: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 3px solid transparent;
+        padding: 18px 25px;
+        font-size: 15px;
+    }
+
+    .nav-link:hover {
+        background: rgba(119, 61, 131, 0.808);
+        border-left-color: #ff00bf;
+        border-bottom-color: transparent;
+    }
+}
+
+/* RESPONSIVE MÓVILES PEQUEÑOS (menos de 480px) */
+@media (max-width: 480px) {
+    /* Menú más estrecho en móviles pequeños */
+    .nav {
+        width: 250px;
+        left: -250px;
+    }
+
+    .nav.active {
+        left: 0;
+    }
+
+    .nav-link {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
