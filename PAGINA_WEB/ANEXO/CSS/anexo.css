@@ -6,7 +6,7 @@ body {
  }
 
 .header {
-    background: linear-gradient(90deg, #721855 0%, #7e0d49 100%);
+    background: linear-gradient(90deg, #6F0303 0%, #6F0303 100%);
     text-align: center;
 }
 
@@ -311,4 +311,5 @@ body {
 .demo p {
     font-size: 14px;
 }
+
     }
